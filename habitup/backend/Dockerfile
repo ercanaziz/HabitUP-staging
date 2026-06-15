@@ -6,6 +6,7 @@ COPY . .
 RUN go build -o habitup ./cmd/api
 
 FROM alpine:3.19
+RUN apk add --no-cache ca-certificates
 WORKDIR /app
 COPY --from=builder /app/habitup .
 EXPOSE 8080
