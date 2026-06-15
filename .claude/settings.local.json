@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(New-Item -ItemType Directory -Force \"A:\\\\Documents\\\\ders\\\\YazMuh Proje\\\\habitup\\\\backend\\\\cmd\\\\api\")",
+      "Bash(New-Item -ItemType Directory -Force \"A:\\\\Documents\\\\ders\\\\YazMuh Proje\\\\habitup\\\\backend\\\\internal\\\\auth\")",
+      "Bash(New-Item -ItemType Directory -Force \"A:\\\\Documents\\\\ders\\\\YazMuh Proje\\\\habitup\\\\backend\\\\internal\\\\habit\")",
+      "Bash(New-Item -ItemType Directory -Force \"A:\\\\Documents\\\\ders\\\\YazMuh Proje\\\\habitup\\\\backend\\\\internal\\\\middleware\")",
+      "Bash(New-Item -ItemType Directory -Force \"A:\\\\Documents\\\\ders\\\\YazMuh Proje\\\\habitup\\\\backend\\\\internal\\\\db\")",
+      "PowerShell(New-Item -ItemType Directory -Force \"A:\\\\Documents\\\\ders\\\\YazMuh Proje\\\\habitup\\\\.github\\\\workflows\")",
+      "PowerShell(cd \"A:\\\\Documents\\\\ders\\\\YazMuh Proje\\\\habitup\\\\backend\"; go build -v ./cmd/api/ 2>&1; Write-Host \"EXIT:$LASTEXITCODE\")"
+    ]
+  }
+}
