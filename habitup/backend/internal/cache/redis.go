@@ -28,7 +28,7 @@ func Connect() {
 
 func buildRedisOptions() *redis.Options {
 	// Öncelik 1: Tam scheme'li URL (redis:// veya rediss://)
-	if url := os.Getenv("REDIS_URL"); url != "" {
+	if url := strings.TrimSpace(os.Getenv("REDIS_URL")); url != "" {
 		if strings.HasPrefix(url, "redis://") || strings.HasPrefix(url, "rediss://") {
 			opts, err := redis.ParseURL(url)
 			if err != nil {
