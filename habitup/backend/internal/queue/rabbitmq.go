@@ -22,29 +22,38 @@ type HabitCheckedEvent struct {
 func Connect() {
 	url := os.Getenv("RABBITMQ_URL")
 	if url == "" {
-		url = "amqp://guest:guest@localhost:5672/"
+		log.Println("RABBITMQ_URL ayarlanmamış — RabbitMQ devre dışı")
+		return
 	}
 
 	var err error
 	conn, err = amqp.Dial(url)
 	if err != nil {
-		log.Fatal("RabbitMQ bağlantı hatası:", err)
+		log.Printf("RabbitMQ bağlantı hatası (devam ediliyor): %v", err)
+		return
 	}
 
 	ch, err = conn.Channel()
 	if err != nil {
-		log.Fatal("RabbitMQ kanal hatası:", err)
+		log.Printf("RabbitMQ kanal hatası (devam ediliyor): %v", err)
+		return
 	}
 
 	_, err = ch.QueueDeclare(HabitCheckedQueue, true, false, false, false, nil)
 	if err != nil {
-		log.Fatal("RabbitMQ kuyruk hatası:", err)
+		log.Printf("RabbitMQ kuyruk hatası (devam ediliyor): %v", err)
+		return
 	}
 
 	log.Println("RabbitMQ bağlantısı başarılı")
 }
 
+
 func PublishHabitChecked(ctx context.Context, userID, habitID string) error {
+	if ch == nil {
+		log.Println("RabbitMQ kanalı yok — event atlanıyor")
+		return nil
+	}
 	body, err := json.Marshal(HabitCheckedEvent{UserID: userID, HabitID: habitID})
 	if err != nil {
 		return err
@@ -58,6 +67,10 @@ func PublishHabitChecked(ctx context.Context, userID, habitID string) error {
 
 // StartConsumer alışkanlık tamamlama eventlerini dinler ve loglar.
 func StartConsumer() {
+	if ch == nil {
+		log.Println("RabbitMQ kanalı yok — consumer başlatılmıyor")
+		return
+	}
 	msgs, err := ch.Consume(HabitCheckedQueue, "", true, false, false, false, nil)
 	if err != nil {
 		log.Println("RabbitMQ consumer hatası:", err)

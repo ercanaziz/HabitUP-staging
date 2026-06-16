@@ -1,1 +1,22 @@
 .DS_Store
+
+# Go binaries
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+habitup/backend/api.exe
+
+# Go test artifacts
+*.test
+*.out
+
+# Environment variables
+.env
+.env.local
+.env.production
+
+# IDE
+.vscode/
+.idea/

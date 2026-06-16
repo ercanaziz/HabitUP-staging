@@ -22,6 +22,11 @@ func main() {
 
 	r := gin.Default()
 
+	// Railway health check — token gerektirmez
+	r.GET("/health", func(c *gin.Context) {
+		c.JSON(200, gin.H{"status": "ok", "service": "habitup"})
+	})
+
 	// CORS
 	r.Use(func(c *gin.Context) {
 		c.Header("Access-Control-Allow-Origin", "*")
