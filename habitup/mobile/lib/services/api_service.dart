@@ -3,7 +3,7 @@ import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 
 class ApiService {
-  // BlueStacks için host makinenin Wi-Fi IP'si kullanılır
+  // Production URL
   static const String _base = 'https://habitup-staging-production.up.railway.app/api';
 
   static Future<String?> _token() async {
