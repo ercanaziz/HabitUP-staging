@@ -4,7 +4,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 class ApiService {
   // BlueStacks için host makinenin Wi-Fi IP'si kullanılır
-  static const String _base = 'http://172.16.1.174:8080/api';
+  static const String _base = 'https://habitup-staging-production.up.railway.app/api';
 
   static Future<String?> _token() async {
     final prefs = await SharedPreferences.getInstance();
