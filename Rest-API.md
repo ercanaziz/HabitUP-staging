@@ -1,6 +1,6 @@
 # REST API Görev Dağılımı
 
-**REST API Adresi:** [habitup-staging-production.up.railway.app](https://habitup-staging-production.up.railway.app)
+**REST API Adresi:** [habitup-production.up.railway.app](https://habitup-production.up.railway.app)
 
 Bu dokümanda, proje ekibindeki her üyenin geliştirmekten sorumlu olduğu REST API metotları listelenmektedir.
 

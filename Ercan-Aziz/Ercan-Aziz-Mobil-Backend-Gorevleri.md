@@ -2,7 +2,7 @@
 
 **Mobil Front-end ile Back-end Bağlanmış Test Videosu:** [Link buraya eklenecek](https://example.com)
 
-**REST API Adresi:** `https://habitup-staging-production.up.railway.app`
+**REST API Adresi:** `https://habitup-production.up.railway.app`
 
 ---
 

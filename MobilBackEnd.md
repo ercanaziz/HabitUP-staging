@@ -1,6 +1,6 @@
 # Mobil Backend (REST API Bağlantısı) Görev Dağılımı
 
-**REST API Adresi:** [habitup-staging-production.up.railway.app](https://habitup-staging-production.up.railway.app)
+**REST API Adresi:** [habitup-production.up.railway.app](https://habitup-production.up.railway.app)
 
 Bu dokümanda, mobil uygulamanın REST API ile iletişimini sağlayan backend entegrasyon görevleri listelenmektedir. Her grup üyesi, kendisine atanan API endpoint'lerinin mobil uygulamadan çağrılması ve yönetilmesinden sorumludur.
 

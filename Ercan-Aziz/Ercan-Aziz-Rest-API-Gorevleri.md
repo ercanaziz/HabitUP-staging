@@ -2,7 +2,7 @@
 
 **API Test Videosu:** [Link buraya eklenecek](https://example.com)
 
-**Canlı API Adresi:** `https://habitup-staging-production.up.railway.app`
+**Canlı API Adresi:** `https://habitup-production.up.railway.app`
 
 **Teknoloji:** Go 1.22 — Gin Web Framework, MongoDB, Redis (JWT blacklist), RabbitMQ (event queue)
 

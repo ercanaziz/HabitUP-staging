@@ -4,7 +4,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 class ApiService {
   // Production URL
-  static const String _base = 'https://habitup-staging-production.up.railway.app/api';
+  static const String _base = 'https://habitup-production.up.railway.app/api';
 
   static Future<String?> _token() async {
     final prefs = await SharedPreferences.getInstance();
