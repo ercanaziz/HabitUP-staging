@@ -5,8 +5,9 @@
     "dockerfilePath": "Dockerfile"
   },
   "deploy": {
-    "startCommand": "./habitup",
-    "healthcheckPath": "/api/habits",
-    "restartPolicyType": "ON_FAILURE"
+    "healthcheckPath": "/health",
+    "healthcheckTimeout": 30,
+    "restartPolicyType": "ON_FAILURE",
+    "restartPolicyMaxRetries": 5
   }
 }
