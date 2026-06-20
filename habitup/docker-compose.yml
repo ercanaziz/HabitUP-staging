@@ -40,7 +40,7 @@ services:
       - "8080:8080"
     environment:
       MONGO_URI: mongodb://root:secret@mongo:27017/habitup?authSource=admin
-      REDIS_ADDR: redis:6379
+      REDIS_URL: redis://redis:6379
       RABBITMQ_URL: amqp://guest:guest@rabbitmq:5672/
       JWT_SECRET: supersecretkey123
       PORT: "8080"
